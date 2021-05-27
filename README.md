@@ -1,4 +1,6 @@
 # Glasstron Quick Start
+![Preview of Glasstron with Acrylic blur](https://i.imgur.com/nJfLRAe.png)
+
 This is based on [Electron Quick Start](https://github.com/electron/electron-quick-start), but with [Glasstron](https://github.com/AryToNeX/Glasstron).
 
 If you want to know more about Glasstron or what it is, go to [Glasstron](https://github.com/AryToNeX/Glasstron)'s official repo.
