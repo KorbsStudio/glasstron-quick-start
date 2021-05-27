@@ -1,0 +1,35 @@
+body {
+  background: rgb(20 20 20 / 70%);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+::selection{background: transparent; color: rgba(255, 255, 255, 0.5);}
+h1 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0px;
+  font-size: 50px;
+  width: 100%;
+  text-align: center;
+  cursor: default;
+}
+button {
+  position: fixed;
+  bottom: 25%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background: #5e5eec;
+  color: white;
+  border: 2px transparent solid;
+  transition: 0.3s border;
+  padding: 10px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  margin: 0px;
+}
+button:hover {
+  border: 2px #a8a8ff solid;
+  transition: 0.3s border;
+}
