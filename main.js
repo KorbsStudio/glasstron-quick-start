@@ -1,6 +1,20 @@
-const {app, BrowserWindow, contentTracing} = require('electron');
+const {app, BrowserWindow, ipcMain, ipcRenderer} = require('electron');
 const glasstron = require('glasstron');
 const path = require('path');
+var osvar = process.platform;
+
+if (osvar == 'darwin') { 
+  app.whenReady().then(() => { // macOS
+    global.blurType = "vibrancy";
+})}
+else if(osvar == 'win32'){ 
+  app.whenReady().then(() => { // Windows
+    global.blurType = "acrylic";
+})}
+else{ 
+  app.whenReady().then(() => { // Linux
+    global.blurType = "blurbehind";
+})}
 
 function createWindow () {
   const mainWindow = new glasstron.BrowserWindow({
@@ -9,17 +23,16 @@ function createWindow () {
     transparent: true,
     frame: false, // Transpancy won't work on Windows if frame is set true. I can confirm it works on Linux with frame is set to true.
 		blur: true,
-		blurType: "acrylic",
-     // Use "blurbehind" on Linux
-     // Use "vibrancy" on macOS.
-     // "blurbehind" does work on all platform (Windows, macOS, and Linux)
+		blurType: global.blurType,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js'), // Used for Window controls
-      enableRemoteModule: true, // For custom titlebar to work, therefore not required for Glasstron by itself
       nodeIntegration: true, // Not required
       contextIsolation: false // Not required
     }
   })
   mainWindow.loadFile('index.html');
+  ipcMain.on('minimize', () => {mainWindow.minimize()})
+  ipcMain.on('maximize', () => {mainWindow.maximize()})
+  ipcMain.on('restore', () => {mainWindow.restore()})
+  ipcMain.on('close', () => {mainWindow.close()})
 }
-app.whenReady().then(() => {createWindow()})
+app.whenReady().then(() => {setTimeout(() => {createWindow()}, 200)}) // setTimeout is used for Linux

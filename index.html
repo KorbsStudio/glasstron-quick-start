@@ -8,22 +8,15 @@
   <header data-for-os="windows" id="titlebar" class="titlebar">
     <div>
       <div id="window-controls">
-        <div class="button" id="min-button">
-          <img class="icon" srcset="./src/images/icons/titlebar/min-w-10.png 1x, ./src/images/icons/titlebar/min-w-12.png 1.25x, ./src/images/icons/titlebar/min-w-15.png 1.5x, ./src/images/icons/titlebar/min-w-15.png 1.75x, ./src/images/icons/titlebar/min-w-20.png 2x, ./src/images/icons/titlebar/min-w-20.png 2.25x, ./src/images/icons/titlebar/min-w-24.png 2.5x, ./src/images/icons/titlebar/min-w-30.png 3x, ./src/images/icons/titlebar/min-w-30.png 3.5x" draggable="false" />
-        </div>
-        <div class="button" id="max-button">
-          <img class="icon" srcset="./src/images/icons/titlebar/max-w-10.png 1x, ./src/images/icons/titlebar/max-w-12.png 1.25x, ./src/images/icons/titlebar/max-w-15.png 1.5x, ./src/images/icons/titlebar/max-w-15.png 1.75x, ./src/images/icons/titlebar/max-w-20.png 2x, ./src/images/icons/titlebar/max-w-20.png 2.25x, ./src/images/icons/titlebar/max-w-24.png 2.5x, ./src/images/icons/titlebar/max-w-30.png 3x, ./src/images/icons/titlebar/max-w-30.png 3.5x" draggable="false" />
-        </div>
-        <div class="button" id="restore-button">
-          <img class="icon" srcset="./src/images/icons/titlebar/restore-w-10.png 1x, ./src/images/icons/titlebar/restore-w-12.png 1.25x, ./src/images/icons/titlebar/restore-w-15.png 1.5x, ./src/images/icons/titlebar/restore-w-15.png 1.75x, ./src/images/icons/titlebar/restore-w-20.png 2x, ./src/images/icons/titlebar/restore-w-20.png 2.25x, ./src/images/icons/titlebar/restore-w-24.png 2.5x, ./src/images/icons/titlebar/restore-w-30.png 3x, ./src/images/icons/titlebar/restore-w-30.png 3.5x" draggable="false" />
-        </div>
-        <div class="button" id="close-button">
-          <img class="icon" srcset="./src/images/icons/titlebar/close-w-10.png 1x, ./src/images/icons/titlebar/close-w-12.png 1.25x, ./src/images/icons/titlebar/close-w-15.png 1.5x, ./src/images/icons/titlebar/close-w-15.png 1.75x, ./src/images/icons/titlebar/close-w-20.png 2x, ./src/images/icons/titlebar/close-w-20.png 2.25x, ./src/images/icons/titlebar/close-w-24.png 2.5x, ./src/images/icons/titlebar/close-w-30.png 3x, ./src/images/icons/titlebar/close-w-30.png 3.5x" draggable="false" />
-        </div>
-    </div>
+        <div onclick="ipcRenderer.send('minimize')" class="button" id="min-button"><img class="icon" srcset="./src/images/icons/titlebar/min-w-10.png 1x, ./src/images/icons/titlebar/min-w-12.png 1.25x, ./src/images/icons/titlebar/min-w-15.png 1.5x, ./src/images/icons/titlebar/min-w-15.png 1.75x, ./src/images/icons/titlebar/min-w-20.png 2x, ./src/images/icons/titlebar/min-w-20.png 2.25x, ./src/images/icons/titlebar/min-w-24.png 2.5x, ./src/images/icons/titlebar/min-w-30.png 3x, ./src/images/icons/titlebar/min-w-30.png 3.5x" draggable="false" /></div>
+        <div onclick="ipcRenderer.send('maximize')" class="button" id="max-button"><img class="icon" srcset="./src/images/icons/titlebar/max-w-10.png 1x, ./src/images/icons/titlebar/max-w-12.png 1.25x, ./src/images/icons/titlebar/max-w-15.png 1.5x, ./src/images/icons/titlebar/max-w-15.png 1.75x, ./src/images/icons/titlebar/max-w-20.png 2x, ./src/images/icons/titlebar/max-w-20.png 2.25x, ./src/images/icons/titlebar/max-w-24.png 2.5x, ./src/images/icons/titlebar/max-w-30.png 3x, ./src/images/icons/titlebar/max-w-30.png 3.5x" draggable="false" /></div>
+        <div onclick="ipcRenderer.send('restore')" class="button" id="restore-button"><img class="icon" srcset="./src/images/icons/titlebar/restore-w-10.png 1x, ./src/images/icons/titlebar/restore-w-12.png 1.25x, ./src/images/icons/titlebar/restore-w-15.png 1.5x, ./src/images/icons/titlebar/restore-w-15.png 1.75x, ./src/images/icons/titlebar/restore-w-20.png 2x, ./src/images/icons/titlebar/restore-w-20.png 2.25x, ./src/images/icons/titlebar/restore-w-24.png 2.5x, ./src/images/icons/titlebar/restore-w-30.png 3x, ./src/images/icons/titlebar/restore-w-30.png 3.5x" draggable="false" /></div>
+        <div onclick="ipcRenderer.send('close')" class="button" id="close-button"><img class="icon" srcset="./src/images/icons/titlebar/close-w-10.png 1x, ./src/images/icons/titlebar/close-w-12.png 1.25x, ./src/images/icons/titlebar/close-w-15.png 1.5x, ./src/images/icons/titlebar/close-w-15.png 1.75x, ./src/images/icons/titlebar/close-w-20.png 2x, ./src/images/icons/titlebar/close-w-20.png 2.25x, ./src/images/icons/titlebar/close-w-24.png 2.5x, ./src/images/icons/titlebar/close-w-30.png 3x, ./src/images/icons/titlebar/close-w-30.png 3.5x" draggable="false" /></div>
+      </div>
   </header>
   <body>
     <h1>Glasstron is cool 😎</h1>
     <button onclick="const { shell } = require('electron'); shell.openExternal('https://github.com/KorbsStudio/glasstron-quick-start/');" >Learn More</button>
   </body>
+  <script src="renderer.js"></script>
 </html>

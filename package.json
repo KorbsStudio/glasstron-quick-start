@@ -4,7 +4,7 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron --enable-transparent-visuals --disable-gpu --disable-software-rasterizer ."
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -20,6 +20,6 @@
     "electron": "^13.0.1"
   },
   "dependencies": {
-    "glasstron": "^0.0.7"
+    "glasstron": "^0.1.0"
   }
 }
