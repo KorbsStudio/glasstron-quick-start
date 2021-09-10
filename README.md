@@ -21,7 +21,8 @@ As far as I'm aware, these are the following requirements for Glasstron.
 Electron by itself only needs Node.
 
  - [NodeJS](https://nodejs.org/en/) v14.16.0 or up
- - [Python](https://www.python.org/) v3.6 or up 
+ - [Python](https://www.python.org/) v3.6 or up
+ - g++ (on Linux)
  - [Visual C++ Redistributable](https://support.microsoft.com/en-us/topic/the-latest-supported-visual-c-downloads-2647da03-1eea-4433-9aff-95f26a218cc0) (on Windows)
  - [Visual Studio Community 2015](https://visualstudio.microsoft.com/) (on Windows)
     - Install Development with C++
