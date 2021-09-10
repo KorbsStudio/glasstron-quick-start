@@ -1,3 +1,5 @@
+NOTE: Windows 11 may show a white blur background, last time I checked which was in July 2021. [View issue](https://github.com/AryToNeX/Glasstron/issues/150).
+
 # Glasstron Quick Start
 ![Preview of Glasstron with Acrylic blur](https://i.imgur.com/nJfLRAe.png)
 
