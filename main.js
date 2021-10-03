@@ -20,9 +20,9 @@ function createWindow () {
     width: 800,
     height: 600,
     transparent: true,
-    frame: false, // Transparency will not work most of the time on Windows if frame is set to true
-		blur: true,
-		blurType: global.blurType,
+    frame: false,
+	blur: true,
+	blurType: global.blurType,
     webPreferences: {
       preload: path.join(__dirname, "./preload.js"),
     }
@@ -33,7 +33,12 @@ function createWindow () {
   ipcMain.on('restore', () => {mainWindow.restore()})
   ipcMain.on('close', () => {mainWindow.close()})
   ipcMain.on('openIn', () => {goToGlasstronRepo()})
+  ipcMain.on("blurToggleOn", async (e, value) => {if(mainWindow !== null){e.sender.send("blurStatus", await mainWindow.setBlur(true))}});
+  ipcMain.on("blurToggleOff", async (e, value) => {if(mainWindow !== null){e.sender.send("blurStatus", await mainWindow.setBlur(false))}});
 }
+
+
+
 
 function goToGlasstronRepo() {shell.openExternal('https://github.com/AryToNeX/Glasstron')}
 app.whenReady().then(() => {setTimeout(() => {createWindow()}, 200)})
