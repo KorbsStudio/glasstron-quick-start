@@ -35,6 +35,10 @@ To start the application:
 npm start
 ```
 
+## To Do List
+ - Add slider for GNOME
+ - Make toggle buttons more pretty uwu
+
 ## Questions and Answers
 ### How to set opacity
 There are no options from Glasstron to set this, this is pure CSS, as mentioned [here](https://github.com/AryToNeX/Glasstron/issues/27).
@@ -50,7 +54,7 @@ If you're getting an error like [this](https://cdn.discordapp.com/attachments/82
 
 As an example, if your install of Python is located at the root of your C:\ drive(like it should be), then you would do the following:
 ```
-npm install --python="C:\Python\python.exe
+npm install --python="C:\Python\python.exe"
 ```
 Pointing to the `.exe` file is necessary.
 
