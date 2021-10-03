@@ -16,6 +16,11 @@
   </header>
   <body>
     <h1>Glasstron is cool 😎</h1>
-    <button onclick="window.api.send('openIn');" >Learn More</button>
+    <button id="lm" onclick="window.api.send('openIn');" >Learn More</button>
+    <div class="toggleArea">
+      <p>Toggle Blur</p>
+      <button id="toggle" onclick="window.api.send('blurToggleOff');">Off</button>
+      <button id="toggle" onclick="window.api.send('blurToggleOn');">On</button>
+    </div>
   </body>
 </html>
