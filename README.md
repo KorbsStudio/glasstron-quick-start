@@ -1,5 +1,3 @@
-NOTE: Windows 11 may show a white blur background, last time I checked which was in July 2021. [View issue](https://github.com/AryToNeX/Glasstron/issues/150).
-
 # Glasstron Quick Start
 ![Preview of Glasstron with Acrylic blur](https://i.imgur.com/nJfLRAe.png)
 
@@ -19,9 +17,6 @@ Support the Glasstron developer:
 
 ## Requirements
 As far as I'm aware, these are the following requirements for Glasstron.
-
-Electron by itself only needs Node.
-
  - [NodeJS](https://nodejs.org/en/) v14.16.0 or up
  - [Python](https://www.python.org/) v3.6 or up
  - g++ (on Linux)
@@ -47,6 +42,9 @@ There are no options from Glasstron to set this, this is pure CSS, as mentioned 
 You can simply just [adjust the opacity of your background color](https://github.com/AryToNeX/Glasstron/issues/27#:~:text=you%20can%20already%20increase%20or%20decrease%20the%20opacity%20by%20increasing%20or%20decreasing%20the%20alpha%20value%20of%20the%20background%20color%20of%20whatever%20app%20you%27re%20using.%20It%20is%20pure%20CSS%2C%20and%20there%27s%20no%20need%20to%20implement%20anything%20on%20Glasstron%27s%20side.) you have set for your app's background.
 
 ## Troubleshooting
+### White tint on Windows 11
+[View Issue](https://github.com/AryToNeX/Glasstron/issues/150)
+
 ### Python not detected (Windows)
 If you're getting an error like [this](https://cdn.discordapp.com/attachments/829662493533667339/847303728431497236/unknown.png), you'll need to tell Node where your install path of Python is.
 
@@ -61,12 +59,3 @@ Pointing to the `.exe` file is necessary.
  - This was once an issue with the Vibrancy extension for Visual Studio Code, you can look at [Issue #5](https://github.com/EYHN/vscode-vibrancy/issues/5) if you're interested.
 
 This is not caused by Glasstron, but according to Arytonex it's ["on the Windows side of composition"](https://github.com/AryToNeX/Glasstron/issues/59#:~:text=on%20the%20Windows%20side%20of%20composition)
-
-### Blur effect not working on macOS/Linux
-This repo has the blur type set to Acrylic, which is meant for Windows only. There are comments in the code already, which should of helped you already.
-
-Use `vibrancy` for macOS.
-
-Use `blurbehind` for Linux.
-
-The option `blurbehind` does work for all platforms.
