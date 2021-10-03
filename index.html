@@ -17,10 +17,7 @@
   <body>
     <h1>Glasstron is cool 😎</h1>
     <button id="lm" onclick="window.api.send('openIn');" >Learn More</button>
-    <div class="toggleArea">
-      <p>Toggle Blur</p>
-      <button id="toggle" onclick="window.api.send('blurToggleOff');">Off</button>
-      <button id="toggle" onclick="window.api.send('blurToggleOn');">On</button>
-    </div>
+    <img id="blurOff" class="toggleBlur" onclick="window.api.send('blurToggleOn'); document.getElementById('blurOn').style.display = 'inherit'; document.getElementById('blurOff').style.display = 'none';" src="./src/images/toggle/off.png">
+    <img id="blurOn" class="toggleBlur" onclick="window.api.send('blurToggleOff'); document.getElementById('blurOff').style.display = 'inherit'; document.getElementById('blurOn').style.display = 'none';" src="./src/images/toggle/on.png">
   </body>
 </html>

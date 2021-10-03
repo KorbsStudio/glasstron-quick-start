@@ -35,15 +35,12 @@ button#lm {
   left: 50%;
   transform: translate(-50%, 50%);
 }
-
-.toggleArea {
+.toggleBlur {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #8080f5;
-  border-radius: 10px;
-  display: flex;
-  padding: 5px 6px;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%);
+  cursor: pointer;
+  width: 60px;
 }
-.toggleArea p {padding: 0px 20px;}
-.toggleArea button {margin-left: 5px;}
+img#blurOff {display: none;}
