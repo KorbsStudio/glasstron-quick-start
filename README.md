@@ -47,7 +47,7 @@ You can simply just [adjust the opacity of your background color](https://github
 
 [View Korbs Studio Pull Request](https://github.com/AryToNeX/Glasstron/pull/187)
 
-In the meantime, until the PR is merged or the issue is at leat fixed, please do the following steps to fix this issue manually:
+In the meantime, until the PR is merged or the issue is at least fixed, please do the following steps to fix this issue manually:
  - Open the file `node_modules\src\native\win32_dwm\dwm.js`
  - On line [63](https://github.com/AryToNeX/Glasstron/blob/master/src/native/win32_dwm/dwm.js#L63), replace `0x00ffffff` with `0x00404040`
 
