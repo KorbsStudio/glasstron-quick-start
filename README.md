@@ -45,6 +45,12 @@ You can simply just [adjust the opacity of your background color](https://github
 ### White tint on Windows 11
 [View Issue](https://github.com/AryToNeX/Glasstron/issues/150)
 
+[View Korbs Studio Pull Request](https://github.com/AryToNeX/Glasstron/pull/187)
+
+In the meantime, until the PR is merged or the issue is at leat fixed, please do the following steps to fix this issue manually:
+ - Open the file `node_modules\src\native\win32_dwm\dwm.js`
+ - On line [63](https://github.com/AryToNeX/Glasstron/blob/master/src/native/win32_dwm/dwm.js#L63), replace `0x00ffffff` with `0x00404040`
+
 ### Python not detected (Windows)
 If you're getting an error like [this](https://cdn.discordapp.com/attachments/829662493533667339/847303728431497236/unknown.png), you'll need to tell Node where your install path of Python is.
 
