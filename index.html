@@ -4,6 +4,7 @@
     <title>Hello World!</title>
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/titlebar.css">
+    <script src="https://kit.fontawesome.com/db4a23598f.js"></script>
   </head>
   <header data-for-os="windows" id="titlebar" class="titlebar">
     <div>
@@ -16,8 +17,21 @@
   </header>
   <body>
     <h1>Glasstron is cool 😎</h1>
-    <button id="lm" onclick="window.api.send('openIn');" >Learn More</button>
-    <img id="blurOff" class="toggleBlur" onclick="window.api.send('blurToggleOn'); document.getElementById('blurOn').style.display = 'inherit'; document.getElementById('blurOff').style.display = 'none';" src="./src/images/toggle/off.png">
-    <img id="blurOn" class="toggleBlur" onclick="window.api.send('blurToggleOff'); document.getElementById('blurOff').style.display = 'inherit'; document.getElementById('blurOn').style.display = 'none';" src="./src/images/toggle/on.png">
+    <p id="gear" onclick="openConfig()"><i class="fas fa-cog"></i></p>
+    <div id="options">
+      <p>Toggle</p>
+      <button onclick="window.api.send('blurToggleOn'); closeConfig();">Turn on blur</button>
+      <button onclick="window.api.send('blurToggleOff'); closeConfig();">Turn off blur</button>
+      <p>Type (Windows and macOS)</p>
+      <button onclick="window.api.send('btTP');closeConfig();">Transparent</button>
+      <button onclick="window.api.send('btBH');closeConfig();">Blurbehind</button>
+      <button onclick="window.api.send('btAY');closeConfig();">Acrylic (Windows only)</button>
+      <button onclick="window.api.send('btVB');closeConfig();">Vibrancy (macOS only)</button>
+    </div>
+    <button id="lm" onclick="window.api.send('openIn');">Learn More</button>
   </body>
 </html>
+<script>
+function openConfig() {document.getElementById('options').style.display = 'inherit';}
+function closeConfig() {document.getElementById('options').style.display = 'none';}
+</script>

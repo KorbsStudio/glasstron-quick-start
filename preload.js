@@ -3,13 +3,17 @@ const {contextBridge, ipcMain, ipcRenderer} = require("electron");
 contextBridge.exposeInMainWorld(
   "api", {
       send: (channel, data) => {
-          let validChannels = ["minimize",
-                               "maximize",
-                               "restore",
-                               "close",
+          let validChannels = ["minimize", // For custom titlebar on Windows
+                               "maximize", // For custom titlebar on Windows
+                               "restore", // For custom titlebar on Windows
+                               "close", // For custom titlebar on Windows
+                               "openIn", // "openIn" not required
                                "blurToggleOn",
                                "blurToggleOff",
-                               "openIn"]; // "openIn" not required, nor are the other options unless you want to keep the custom titlebar
+                               "btBH",
+                               "btTP",
+                               "btAY",
+                               "btVB"]; 
           if (validChannels.includes(channel)) {
               ipcRenderer.send(channel, data);
           }

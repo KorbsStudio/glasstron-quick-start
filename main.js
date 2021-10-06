@@ -5,14 +5,18 @@ const path = require('path');
 if (process.platform == 'darwin') { 
   app.whenReady().then(() => { // macOS
     global.blurType = "vibrancy";
+    global.windowFrame = 'false'
 })}
 else if(process.platform == 'win32'){ 
   app.whenReady().then(() => { // Windows
     global.blurType = "acrylic";
+    global.windowFrame = 'false' // The effect won't work properly if the frame is enabled on Windows
+    global.titlebarCustom = ''
 })}
 else{ 
   app.whenReady().then(() => { // Linux
     global.blurType = "blurbehind";
+    global.windowFrame = 'true'
 })}
 
 function createWindow () {
@@ -20,9 +24,10 @@ function createWindow () {
     width: 800,
     height: 600,
     transparent: true,
-    frame: false,
-	blur: true,
-	blurType: global.blurType,
+    frame: global.windowFrame,
+    titlebarStyle: 'hiddenInset',
+    blur: true,
+    blurType: global.blurType,
     webPreferences: {
       preload: path.join(__dirname, "./preload.js"),
     }
@@ -32,13 +37,14 @@ function createWindow () {
   ipcMain.on('maximize', () => {mainWindow.maximize()})
   ipcMain.on('restore', () => {mainWindow.restore()})
   ipcMain.on('close', () => {mainWindow.close()})
-  ipcMain.on('openIn', () => {goToGlasstronRepo()})
+  ipcMain.on('openIn', () => {shell.openExternal('https://github.com/AryToNeX/Glasstron')})
   ipcMain.on("blurToggleOn", async (e, value) => {if(mainWindow !== null){e.sender.send("blurStatus", await mainWindow.setBlur(true))}});
   ipcMain.on("blurToggleOff", async (e, value) => {if(mainWindow !== null){e.sender.send("blurStatus", await mainWindow.setBlur(false))}});
+  ipcMain.on("btBH", (e, value) => {const mainWindow = BrowserWindow.fromWebContents(e.sender);if(mainWindow !== null){mainWindow.blurType = 'blurbehind';e.sender.send("blurTypeChanged", mainWindow.blurType);}});
+  ipcMain.on("btTP", (e, value) => {const mainWindow = BrowserWindow.fromWebContents(e.sender);if(mainWindow !== null){mainWindow.blurType = 'transparent';e.sender.send("blurTypeChanged", mainWindow.blurType);}});
+  ipcMain.on("btAY", (e, value) => {const mainWindow = BrowserWindow.fromWebContents(e.sender);if(mainWindow !== null){mainWindow.blurType = 'acrylic';e.sender.send("blurTypeChanged", mainWindow.blurType);}});
+  ipcMain.on("btVB", (e, value) => {const mainWindow = BrowserWindow.fromWebContents(e.sender);if(mainWindow !== null){mainWindow.blurType = 'vibrancy';e.sender.send("blurTypeChanged", mainWindow.blurType);}});
 }
 
-
-
-
-function goToGlasstronRepo() {shell.openExternal('https://github.com/AryToNeX/Glasstron')}
+function goToGlasstronRepo() {}
 app.whenReady().then(() => {setTimeout(() => {createWindow()}, 200)})
