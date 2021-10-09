@@ -23,7 +23,6 @@ function createWindow () {
   const mainWindow = new glasstron.BrowserWindow({
     width: 800,
     height: 600,
-    transparent: true,
     frame: global.windowFrame,
     titlebarStyle: 'hiddenInset',
     blur: true,
