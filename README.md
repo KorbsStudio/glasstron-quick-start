@@ -40,15 +40,6 @@ There are no options from Glasstron to set this, this is pure CSS, as mentioned 
 You can simply just [adjust the opacity of your background color](https://github.com/AryToNeX/Glasstron/issues/27#:~:text=you%20can%20already%20increase%20or%20decrease%20the%20opacity%20by%20increasing%20or%20decreasing%20the%20alpha%20value%20of%20the%20background%20color%20of%20whatever%20app%20you%27re%20using.%20It%20is%20pure%20CSS%2C%20and%20there%27s%20no%20need%20to%20implement%20anything%20on%20Glasstron%27s%20side.) you have set for your app's background.
 
 ## Troubleshooting
-### White tint on Windows 11
-[View Issue](https://github.com/AryToNeX/Glasstron/issues/150)
-
-[View Korbs Studio Pull Request](https://github.com/AryToNeX/Glasstron/pull/187)
-
-In the meantime, until the PR is merged or the issue is at least fixed, please do the following steps to fix this issue manually:
- - Open the file `node_modules\glasstron\src\native\win32_dwm\dwm.js`
- - On line [63](https://github.com/AryToNeX/Glasstron/blob/master/src/native/win32_dwm/dwm.js#L63), replace `0x00ffffff` with `0x00404040`
-
 ### Python not detected (Windows)
 If you're getting an error like [this](https://cdn.discordapp.com/attachments/829662493533667339/847303728431497236/unknown.png), you'll need to tell Node where your install path of Python is.
 
