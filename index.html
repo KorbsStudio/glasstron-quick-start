@@ -4,7 +4,6 @@
     <title>Hello World!</title>
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/titlebar.css">
-    <script src="https://kit.fontawesome.com/db4a23598f.js"></script>
   </head>
   <header data-for-os="windows" id="titlebar" class="titlebar">
     <div>
@@ -15,23 +14,97 @@
         <div onclick="window.api.send('close')" class="button" id="close-button"><img class="icon" srcset="./src/images/icons/titlebar/close-w-10.png 1x, ./src/images/icons/titlebar/close-w-12.png 1.25x, ./src/images/icons/titlebar/close-w-15.png 1.5x, ./src/images/icons/titlebar/close-w-15.png 1.75x, ./src/images/icons/titlebar/close-w-20.png 2x, ./src/images/icons/titlebar/close-w-20.png 2.25x, ./src/images/icons/titlebar/close-w-24.png 2.5x, ./src/images/icons/titlebar/close-w-30.png 3x, ./src/images/icons/titlebar/close-w-30.png 3.5x" draggable="false" /></div>
       </div>
   </header>
-  <body>
-    <h1>Glasstron is cool 😎</h1>
-    <p id="gear" onclick="openConfig()"><i class="fas fa-cog"></i></p>
-    <div id="options">
-      <p>Toggle</p>
-      <button onclick="window.api.send('blurToggleOn'); closeConfig();">Turn on blur</button>
-      <button onclick="window.api.send('blurToggleOff'); closeConfig();">Turn off blur</button>
-      <p>Type (Windows and macOS)</p>
-      <button onclick="window.api.send('btTP');closeConfig();">Transparent</button>
-      <button onclick="window.api.send('btBH');closeConfig();">Blurbehind</button>
-      <button onclick="window.api.send('btAY');closeConfig();">Acrylic (Windows only)</button>
-      <button onclick="window.api.send('btVB');closeConfig();">Vibrancy (macOS only)</button>
+  <body onload="getOS()">
+    <div class="selector">
+      <button onclick="atveTransparent(); window.api.send('blurToggleOff');" id="Transparent">Transparent</button>
+      <button onclick="atveBlurbehind(); window.api.send('btBH'); window.api.send('blurToggleOn');" id="Blurbehind">Blurbehind</button>
+      <button onclick="atveVibrancy(); window.api.send('btVB'); window.api.send('blurToggleOn');" id="Vibrancy">Vibrancy</button>
+      <button onclick="atveAcrylic(); window.api.send('btAY'); window.api.send('blurToggleOn');" id="Acrylic">Acrylic</button>
     </div>
-    <button id="lm" onclick="window.api.send('openIn');">Learn More</button>
   </body>
 </html>
+
 <script>
-function openConfig() {document.getElementById('options').style.display = 'inherit';}
-function closeConfig() {document.getElementById('options').style.display = 'none';}
+function getOS() {
+var userAgent = window.navigator.userAgent,
+  platform = window.navigator.platform,
+  macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+  windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+  os = null;
+
+  if (macosPlatforms.indexOf(platform) !== -1) {
+    atveVibrancy()
+  } else if (windowsPlatforms.indexOf(platform) !== -1) {
+    atveAcrylic()
+  } else if (!os && /Linux/.test(platform)) {
+    atveBlurbehind()
+  }
+
+  return os;
+}
+
+function atveAcrylic() {
+    document.getElementById('Acrylic').style.opacity = '1';
+    document.getElementById('Acrylic').style.fontSize = '86px';
+    document.getElementById('Acrylic').style.textDecoration = 'underline';
+
+
+    document.getElementById('Blurbehind').style.opacity = '0.2';
+    document.getElementById('Blurbehind').style.fontSize = '42px';
+    document.getElementById('Blurbehind').style.textDecoration = 'none';
+    document.getElementById('Transparent').style.opacity = '0.2';
+    document.getElementById('Transparent').style.fontSize = '42px';
+    document.getElementById('Transparent').style.textDecoration = 'none';
+    document.getElementById('Vibrancy').style.opacity = '0.2';
+    document.getElementById('Vibrancy').style.fontSize = '42px';
+    document.getElementById('Vibrancy').style.textDecoration = 'none';
+}
+function atveTransparent() {
+    document.getElementById('Transparent').style.opacity = '1';
+    document.getElementById('Transparent').style.fontSize = '86px';
+    document.getElementById('Transparent').style.textDecoration = 'underline';
+
+
+    document.getElementById('Blurbehind').style.opacity = '0.2';
+    document.getElementById('Blurbehind').style.fontSize = '42px';
+    document.getElementById('Blurbehind').style.textDecoration = 'none';
+    document.getElementById('Acrylic').style.opacity = '0.2';
+    document.getElementById('Acrylic').style.fontSize = '42px';
+    document.getElementById('Acrylic').style.textDecoration = 'none';
+    document.getElementById('Vibrancy').style.opacity = '0.2';
+    document.getElementById('Vibrancy').style.fontSize = '42px';
+    document.getElementById('Vibrancy').style.textDecoration = 'none';
+}
+function atveBlurbehind() {
+    document.getElementById('Blurbehind').style.opacity = '1';
+    document.getElementById('Blurbehind').style.fontSize = '86px';
+    document.getElementById('Blurbehind').style.textDecoration = 'underline';
+
+
+    document.getElementById('Acrylic').style.opacity = '0.2';
+    document.getElementById('Acrylic').style.fontSize = '42px';
+    document.getElementById('Acrylic').style.textDecoration = 'none';
+    document.getElementById('Transparent').style.opacity = '0.2';
+    document.getElementById('Transparent').style.fontSize = '42px';
+    document.getElementById('Transparent').style.textDecoration = 'none';
+    document.getElementById('Vibrancy').style.opacity = '0.2';
+    document.getElementById('Vibrancy').style.fontSize = '42px';
+    document.getElementById('Vibrancy').style.textDecoration = 'none';
+}
+function atveVibrancy() {
+    document.getElementById('Vibrancy').style.opacity = '1';
+    document.getElementById('Vibrancy').style.fontSize = '86px';
+    document.getElementById('Vibrancy').style.textDecoration = 'underline';
+
+
+    document.getElementById('Blurbehind').style.opacity = '0.2';
+    document.getElementById('Blurbehind').style.fontSize = '42px';
+    document.getElementById('Blurbehind').style.textDecoration = 'none';
+    document.getElementById('Transparent').style.opacity = '0.2';
+    document.getElementById('Transparent').style.fontSize = '42px';
+    document.getElementById('Transparent').style.textDecoration = 'none';
+    document.getElementById('Acrylic').style.opacity = '0.2';
+    document.getElementById('Acrylic').style.fontSize = '42px';
+    document.getElementById('Acrylic').style.textDecoration = 'none';
+}
 </script>
