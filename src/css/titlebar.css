@@ -25,7 +25,7 @@
 
 #window-controls {
     display: grid;
-    grid-template-columns: repeat(3, 46px);
+    grid-template-columns: repeat(2, 46px);
     position: fixed;
     top: 0;
     right: 0;
@@ -81,21 +81,6 @@
 #min-button {
   grid-column: 1;
 }
-#max-button, #restore-button {
-  grid-column: 2;
-}
 #close-button {
-  grid-column: 3;
-}
-
-#restore-button {
-  display: none !important;
-}
-
-.maximized #restore-button {
-  display: flex !important;
-}
-
-.maximized #max-button {
-  display: none;
+  grid-column: 2;
 }

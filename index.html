@@ -9,14 +9,12 @@
     <div>
       <div id="window-controls">
         <div onclick="window.api.send('minimize')" class="button" id="min-button"><img class="icon" srcset="./src/images/icons/titlebar/min-w-10.png 1x, ./src/images/icons/titlebar/min-w-12.png 1.25x, ./src/images/icons/titlebar/min-w-15.png 1.5x, ./src/images/icons/titlebar/min-w-15.png 1.75x, ./src/images/icons/titlebar/min-w-20.png 2x, ./src/images/icons/titlebar/min-w-20.png 2.25x, ./src/images/icons/titlebar/min-w-24.png 2.5x, ./src/images/icons/titlebar/min-w-30.png 3x, ./src/images/icons/titlebar/min-w-30.png 3.5x" draggable="false" /></div>
-        <div onclick="window.api.send('maximize')" class="button" id="max-button"><img class="icon" srcset="./src/images/icons/titlebar/max-w-10.png 1x, ./src/images/icons/titlebar/max-w-12.png 1.25x, ./src/images/icons/titlebar/max-w-15.png 1.5x, ./src/images/icons/titlebar/max-w-15.png 1.75x, ./src/images/icons/titlebar/max-w-20.png 2x, ./src/images/icons/titlebar/max-w-20.png 2.25x, ./src/images/icons/titlebar/max-w-24.png 2.5x, ./src/images/icons/titlebar/max-w-30.png 3x, ./src/images/icons/titlebar/max-w-30.png 3.5x" draggable="false" /></div>
-        <div onclick="window.api.send('restore')" class="button" id="restore-button"><img class="icon" srcset="./src/images/icons/titlebar/restore-w-10.png 1x, ./src/images/icons/titlebar/restore-w-12.png 1.25x, ./src/images/icons/titlebar/restore-w-15.png 1.5x, ./src/images/icons/titlebar/restore-w-15.png 1.75x, ./src/images/icons/titlebar/restore-w-20.png 2x, ./src/images/icons/titlebar/restore-w-20.png 2.25x, ./src/images/icons/titlebar/restore-w-24.png 2.5x, ./src/images/icons/titlebar/restore-w-30.png 3x, ./src/images/icons/titlebar/restore-w-30.png 3.5x" draggable="false" /></div>
         <div onclick="window.api.send('close')" class="button" id="close-button"><img class="icon" srcset="./src/images/icons/titlebar/close-w-10.png 1x, ./src/images/icons/titlebar/close-w-12.png 1.25x, ./src/images/icons/titlebar/close-w-15.png 1.5x, ./src/images/icons/titlebar/close-w-15.png 1.75x, ./src/images/icons/titlebar/close-w-20.png 2x, ./src/images/icons/titlebar/close-w-20.png 2.25x, ./src/images/icons/titlebar/close-w-24.png 2.5x, ./src/images/icons/titlebar/close-w-30.png 3x, ./src/images/icons/titlebar/close-w-30.png 3.5x" draggable="false" /></div>
       </div>
   </header>
   <body onload="getOS()">
     <div class="selector">
-      <button onclick="atveTransparent(); window.api.send('blurToggleOff');" id="Transparent">Transparent</button>
+      <button onclick="atveTransparent(); window.api.send('btTP'); window.api.send('blurToggleOn');" id="Transparent">Transparent</button>
       <button onclick="atveBlurbehind(); window.api.send('btBH'); window.api.send('blurToggleOn');" id="Blurbehind">Blurbehind</button>
       <button onclick="atveVibrancy(); window.api.send('btVB'); window.api.send('blurToggleOn');" id="Vibrancy">Vibrancy</button>
       <button onclick="atveAcrylic(); window.api.send('btAY'); window.api.send('blurToggleOn');" id="Acrylic">Acrylic</button>
