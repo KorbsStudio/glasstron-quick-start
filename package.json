@@ -1,7 +1,7 @@
 {
-  "name": "electron-quick-start",
+  "name": "glasstron-quick-start",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A minimal Electron application using Glasstron",
   "main": "main.js",
   "scripts": {
     "start": "electron --enable-transparent-visuals --disable-gpu --disable-software-rasterizer ."
@@ -9,17 +9,15 @@
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
     "Electron",
-    "quick",
     "start",
     "tutorial",
-    "demo"
+    "demo",
+    "glasstron"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^15.0.0"
+    "electron": "^16.0.6"
   },
   "dependencies": {
-    "glasstron": "^0.1.0"
+    "glasstron": "^0.1.1"
   }
 }

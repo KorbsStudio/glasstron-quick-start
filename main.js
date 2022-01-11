@@ -1,4 +1,4 @@
-const {app, BrowserWindow, contextBridge, ipcMain, ipcRenderer} = require('electron'); // "shell" is not required
+const {app, BrowserWindow, contextBridge, ipcMain, ipcRenderer} = require('electron');
 const glasstron = require('glasstron');
 const path = require('path');
 
