@@ -15,7 +15,7 @@
     "glasstron"
   ],
   "devDependencies": {
-    "electron": "^16.0.6"
+    "electron": "^18.0.0"
   },
   "dependencies": {
     "glasstron": "^0.1.1"
