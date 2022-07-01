@@ -1,3 +1,6 @@
+## Plans for Glasstron 2.0
+View here: https://github.com/NyaomiDEV/Glasstron/issues/263
+
 # Glasstron Quick Start
 ![Preview of Glasstron with Acrylic blur](https://i.imgur.com/nJfLRAe.png)
 
